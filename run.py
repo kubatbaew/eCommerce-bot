@@ -8,9 +8,11 @@ from aiogram.client.bot import DefaultBotProperties
 from config import BOT_TOKEN
 
 from handlers.base import router
+from db.base import async_main
 
 
 async def main():
+    await async_main()
     bot = Bot(BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     dp = Dispatcher()
 
