@@ -12,4 +12,4 @@ class User(BaseModel):
     id: Mapped[int] = mapped_column(primary_key=True)
     tg_id = mapped_column(BigInteger)
 
-    cart_rel: Mapped[List['Cart']] = relationship('user_rel')
+    cart_rel: Mapped[List['Cart']] = relationship(back_populates='user_rel')

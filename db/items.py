@@ -17,4 +17,4 @@ class Item(BaseModel):
     category: Mapped[int] = mapped_column(ForeignKey('categories.id'))
 
     category_rel: Mapped['Category'] = relationship(back_populates='item_rel')
-    cart_rel: Mapped[List['Cart']] = relationship('item_rel')
+    cart_rel: Mapped[List['Cart']] = relationship(back_populates='item_rel')
